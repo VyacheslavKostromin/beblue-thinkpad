@@ -34,7 +34,7 @@ modules:
       - htop
       - morewaita-icon-theme
       - mc
-      - thinkfan
+      - zcfan
       
     remove:
       # example: removing firefox (in favor of the flatpak)
@@ -63,5 +63,9 @@ modules:
           - mesa-libGL
           - mesa-vulkan-drivers
           - mesa-va-drivers
+  - type: systemd
+    system:
+      enabled:
+        - zcfan.service
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
