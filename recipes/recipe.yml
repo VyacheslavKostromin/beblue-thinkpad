@@ -33,6 +33,7 @@ modules:
       - gparted
       - htop
       - morewaita-icon-theme
+      - mc
       
     remove:
       # example: removing firefox (in favor of the flatpak)
