@@ -35,6 +35,7 @@ modules:
       - morewaita-icon-theme
       - mc
       - zcfan
+      - sysfsutils
       
     remove:
       # example: removing firefox (in favor of the flatpak)
