@@ -33,7 +33,6 @@ modules:
       - gparted
       - htop
       - morewaita-icon-theme
-      - mc
       - zcfan
       - sysfsutils
       
@@ -68,6 +67,11 @@ modules:
     system:
       enabled:
         - zcfan.service
+  - type: gnome-extensions
+    install:
+      - 517 # Caffeine
+      - 3733 # Tiling Assistant
+      - 6807 # System Monitor
   - type: initramfs
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
