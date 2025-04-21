@@ -34,6 +34,7 @@ modules:
       - htop
       - morewaita-icon-theme
       - mc
+      - thinkfan
       
     remove:
       # example: removing firefox (in favor of the flatpak)
