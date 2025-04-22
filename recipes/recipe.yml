@@ -23,8 +23,10 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/trixieua/mutter-patched/repo/fedora-%OS_VERSION%/trixieua-mutter-patched-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/trixieua/mesa-clang/repo/fedora-%OS_VERSION%/trixieua-mesa-clang-fedora-%OS_VERSION%.repo?arch=x86_64
       - https://copr.fedorainfracloud.org/coprs/trixieua/morewaita-icon-theme/repo/fedora-%OS_VERSION%/trixieua-morewaita-icon-theme-fedora-%OS_VERSION%.repo
+
     keys:
       - https://packages.microsoft.com/keys/microsoft.asc
+
     install:
       - adw-gtk3-theme
       - code
@@ -43,6 +45,7 @@ modules:
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
       - gnome-classic-session
+
   - type: rpm-ostree
     replace:
       - from-repo: https://copr.fedorainfracloud.org/coprs/trixieua/mutter-patched/repo/fedora-%OS_VERSION%/trixieua-mutter-patched-fedora-%OS_VERSION%.repo
@@ -53,6 +56,7 @@ modules:
           - gnome-shell
           - gnome-shell-common
           - xorg-x11-server-Xwayland
+
   - type: rpm-ostree
     replace:
       - from-repo: https://copr.fedorainfracloud.org/coprs/trixieua/mesa-clang/repo/fedora-%OS_VERSION%/trixieua-mesa-clang-fedora-%OS_VERSION%.repo?arch=x86_64
@@ -64,16 +68,18 @@ modules:
           - mesa-libGL
           - mesa-vulkan-drivers
           - mesa-va-drivers
+
   - type: systemd
     system:
       enabled:
         - zcfan.service
         - irqbalance.service
+
   - type: gnome-extensions
     install:
       - 517 # Caffeine
       - 3733 # Tiling Assistant
       - 6807 # System Monitor
-  - type: initramfs
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
