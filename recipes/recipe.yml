@@ -34,10 +34,11 @@ modules:
       - fastfetch
       - gparted
       - htop
-      - morewaita-icon-theme
-      - zcfan
-      - sysfsutils
       - irqbalance
+      - morewaita-icon-theme
+      - sysfsutils
+      - wireguard-tools
+      - zcfan
       
     remove:
       # example: removing firefox (in favor of the flatpak)
