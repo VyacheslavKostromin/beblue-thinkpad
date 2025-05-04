@@ -98,4 +98,8 @@ modules:
     snippets:
       - "rpm -e dnf5 dnf5-plugins"
 
+  - type: script
+    scripts:
+      - remove-rpm.sh
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
