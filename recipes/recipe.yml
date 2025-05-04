@@ -17,40 +17,44 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      - https://packages.microsoft.com/yumrepos/vscode/config.repo
-      - https://copr.fedorainfracloud.org/coprs/trixieua/mutter-patched/repo/fedora-%OS_VERSION%/trixieua-mutter-patched-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/trixieua/mesa-clang/repo/fedora-%OS_VERSION%/trixieua-mesa-clang-fedora-%OS_VERSION%.repo?arch=x86_64
-      - https://copr.fedorainfracloud.org/coprs/trixieua/morewaita-icon-theme/repo/fedora-%OS_VERSION%/trixieua-morewaita-icon-theme-fedora-%OS_VERSION%.repo
+      files:
+        - https://packages.microsoft.com/yumrepos/vscode/config.repo
+      copr:
+        - trixieua/mutter-patched
+        - trixieua/mesa-clang
+        - trixieua/morewaita-icon-theme
+      keys:
+        - https://packages.microsoft.com/keys/microsoft.asc
 
-    keys:
-      - https://packages.microsoft.com/keys/microsoft.asc
-
+  - type: dnf
     install:
-      - adw-gtk3-theme
-      - audacious
-      - code
-      - distrobox
-      - fastfetch
-      - gparted
-      - htop
-      - irqbalance
-      - morewaita-icon-theme
-      - sysfsutils
-      - wireguard-tools
-      - zcfan
+      packages:
+        - adw-gtk3-theme
+        - audacious
+        - code
+        - distrobox
+        - fastfetch
+        - gparted
+        - htop
+        - irqbalance
+        - morewaita-icon-theme
+        - sysfsutils
+        - wireguard-tools
+        - zcfan
       
-    remove:
+      remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
-      - firefox
-      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-      - gnome-classic-session
+        - firefox
+        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - gnome-classic-session
 
-  - type: rpm-ostree
+  - type: dnf
     replace:
-      - from-repo: https://copr.fedorainfracloud.org/coprs/trixieua/mutter-patched/repo/fedora-%OS_VERSION%/trixieua-mutter-patched-fedora-%OS_VERSION%.repo
+      - from-repo: copr:copr.fedorainfracloud.org:trixieua:mutter-patched
+        skip-unavailable: true
         packages:
           - mutter
           - mutter-common
@@ -59,9 +63,10 @@ modules:
           - gnome-shell-common
           - xorg-x11-server-Xwayland
 
-  - type: rpm-ostree
+  - type: dnf
     replace:
-      - from-repo: https://copr.fedorainfracloud.org/coprs/trixieua/mesa-clang/repo/fedora-%OS_VERSION%/trixieua-mesa-clang-fedora-%OS_VERSION%.repo?arch=x86_64
+      - from-repo: copr:copr.fedorainfracloud.org:trixieua:mesa-clang
+        skip-unavailable: true
         packages:
           - mesa-filesystem
           - mesa-libgbm
@@ -84,4 +89,3 @@ modules:
       - 6807 # System Monitor
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
-
