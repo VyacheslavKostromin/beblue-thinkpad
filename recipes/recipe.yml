@@ -43,10 +43,12 @@ modules:
         - sysfsutils
         - wireguard-tools
         - zcfan
-        
+
   - type: dnf
     group-install:
-      - gnome-desktop
+      with-optional: false
+      packages:
+        - gnome-desktop
       
     remove:
       packages:
