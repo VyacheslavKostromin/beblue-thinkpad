@@ -43,6 +43,7 @@ modules:
         - sysfsutils
         - wireguard-tools
         - zcfan
+        - unzip
 
   - type: dnf
     group-install:
