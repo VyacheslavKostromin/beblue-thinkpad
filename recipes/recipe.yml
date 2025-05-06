@@ -25,6 +25,7 @@ modules:
         - trixieua/mutter-patched
         - trixieua/mesa-clang
         - trixieua/morewaita-icon-theme
+        - bieszczaders/kernel-cachyos-addons
       keys:
         - https://packages.microsoft.com/keys/microsoft.asc
 
@@ -41,6 +42,7 @@ modules:
         - irqbalance
         - morewaita-icon-theme
         - sysfsutils
+        - scx-scheds
         - wireguard-tools
         - zcfan
       
