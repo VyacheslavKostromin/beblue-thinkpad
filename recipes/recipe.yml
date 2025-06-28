@@ -52,7 +52,6 @@ modules:
         - firefox
         - firefox-langpacks
         - gnome-classic-session
-        - rpm-ostree
 
   - type: dnf
     replace:
