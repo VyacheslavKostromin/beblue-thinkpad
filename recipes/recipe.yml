@@ -90,7 +90,7 @@ modules:
       enabled:
         - zcfan.service
         - irqbalance.service
-        - scx.service
+       # - scx.service
 
   - type: gnome-extensions
     install:
