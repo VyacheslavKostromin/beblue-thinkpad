@@ -39,6 +39,7 @@ modules:
         - distrobox
         - fastfetch
         - gparted
+        - gnome-tweaks
         - htop
         - irqbalance
         - morewaita-icon-theme
