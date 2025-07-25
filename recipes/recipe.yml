@@ -35,6 +35,7 @@ modules:
         - adw-gtk3-theme
         - android-tools
         - audacious
+        - chromium
         - code
         - distrobox
         - fastfetch
