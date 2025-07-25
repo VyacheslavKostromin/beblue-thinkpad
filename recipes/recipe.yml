@@ -19,6 +19,7 @@ modules:
 
   - type: dnf
     repos:
+      nonfree: rpmfusion
       files:
         - https://packages.microsoft.com/yumrepos/vscode/config.repo
       copr:
@@ -35,6 +36,8 @@ modules:
         - adw-gtk3-theme
         - android-tools
         - audacious
+        - libva-utils
+        - libva-intel-driver
         - chromium
         - code
         - distrobox
