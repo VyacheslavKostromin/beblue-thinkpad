@@ -45,6 +45,7 @@ modules:
         - gparted
         - gnome-tweaks
         - htop
+        - helix
         - irqbalance
         - morewaita-icon-theme
         - sysfsutils
