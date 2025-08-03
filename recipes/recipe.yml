@@ -41,7 +41,7 @@ modules:
         - chromium
         - code
         - distrobox
-        - docker-cli
+        - docker
         - fastfetch
         - gparted
         - gnome-tweaks
