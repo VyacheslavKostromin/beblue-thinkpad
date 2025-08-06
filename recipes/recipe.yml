@@ -39,6 +39,7 @@ modules:
         - libva-utils
         - libva-intel-driver
         - chromium
+        - gnome-console
         - code
         - distrobox
         - docker
@@ -61,6 +62,7 @@ modules:
         - firefox
         - firefox-langpacks
         - gnome-classic-session
+        - ptyxis
 
   - type: dnf
     replace:
