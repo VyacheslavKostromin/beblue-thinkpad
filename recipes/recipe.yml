@@ -27,6 +27,7 @@ modules:
         - trixieua/mesa-clang
         - trixieua/morewaita-icon-theme
         - bieszczaders/kernel-cachyos-addons
+        - bebeb/nautilus-kgx
       keys:
         - https://packages.microsoft.com/keys/microsoft.asc
 
@@ -56,13 +57,19 @@ modules:
         - https://github.com/OpenTabletDriver/OpenTabletDriver/releases/download/v0.6.5.1/opentabletdriver-0.6.5.1-1.x86_64.rpm
         - zcfan
         - nmap
-      
+
     remove:
       packages:
         - firefox
         - firefox-langpacks
         - gnome-classic-session
         - ptyxis
+
+  - type: dnf
+    replace:
+      - from-repo: copr:copr.fedorainfracloud.org:bebeb:nautilus-kgx
+        packages:
+          - nautilus
 
   - type: dnf
     replace:
@@ -100,7 +107,7 @@ modules:
       enabled:
         - zcfan.service
         - irqbalance.service
-       # - scx.service
+        # - scx.service
 
   - type: gnome-extensions
     install:
