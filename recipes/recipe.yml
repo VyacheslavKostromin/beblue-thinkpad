@@ -39,11 +39,10 @@ modules:
         - audacious
         - libva-utils
         - libva-intel-driver
-        - chromium
         - gnome-console
         - code
+        - epiphany
         - distrobox
-        - docker
         - fastfetch
         - gparted
         - gnome-tweaks
